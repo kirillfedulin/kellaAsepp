@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/15/2026 11:30:53
+-- Date Created: 10/15/2026 12:31:20
 -- Generated from EDMX file: C:\Users\opilane\source\repos\kellaAsepp\kellaAsepp\Model1.edmx
 -- --------------------------------------------------
 
@@ -53,6 +53,7 @@ GO
 CREATE TABLE [dbo].[Entity2Set] (
     [kasutajaId] int IDENTITY(1,1) NOT NULL,
     [nimi] nvarchar(max)  NOT NULL,
+    [Id] nvarchar(max)  NOT NULL,
     [Entity1_Id] int  NOT NULL
 );
 GO
@@ -61,6 +62,7 @@ GO
 CREATE TABLE [dbo].[Entity3Set] (
     [tooId] int IDENTITY(1,1) NOT NULL,
     [tooNimi] nvarchar(max)  NOT NULL,
+    [Id] nvarchar(max)  NOT NULL,
     [Entity1_Id] int  NOT NULL
 );
 GO

@@ -16,6 +16,7 @@ namespace kellaAsepp
     {
         public int kasutajaId { get; set; }
         public string nimi { get; set; }
+        public string Id { get; set; }
     
         public virtual Entity1 Entity1 { get; set; }
     }

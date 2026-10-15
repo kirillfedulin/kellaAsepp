@@ -31,6 +31,7 @@
     </Key>
     <Property Name="kasutajaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nimi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Entity1_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Entity3Set">
@@ -39,6 +40,7 @@
     </Key>
     <Property Name="tooId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tooNimi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Entity1_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="Entity1Entity2">
@@ -87,25 +89,27 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
           <NavigationProperty Name="Entity2" Relationship="Model1.Entity1Entity2" FromRole="Entity1" ToRole="Entity2" />
           <NavigationProperty Name="Entity3" Relationship="Model1.Entity1Entity3" FromRole="Entity1" ToRole="Entity3" />
-          <Property Name="name" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Entity2">
           <Key>
             <PropertyRef Name="kasutajaId" />
           </Key>
           <Property Name="kasutajaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Entity1" Relationship="Model1.Entity1Entity2" FromRole="Entity2" ToRole="Entity1" />
           <Property Name="nimi" Type="String" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" />
+          <NavigationProperty Name="Entity1" Relationship="Model1.Entity1Entity2" FromRole="Entity2" ToRole="Entity1" />
         </EntityType>
         <EntityType Name="Entity3">
           <Key>
             <PropertyRef Name="tooId" />
           </Key>
           <Property Name="tooId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Entity1" Relationship="Model1.Entity1Entity3" FromRole="Entity3" ToRole="Entity1" />
           <Property Name="tooNimi" Type="String" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" />
+          <NavigationProperty Name="Entity1" Relationship="Model1.Entity1Entity3" FromRole="Entity3" ToRole="Entity1" />
         </EntityType>
         <Association Name="Entity1Entity2">
           <End Type="Model1.Entity1" Role="Entity1" Multiplicity="1" />
@@ -134,6 +138,7 @@
         <MappingFragment StoreEntitySet="Entity2Set">
           <ScalarProperty Name="kasutajaId" ColumnName="kasutajaId" />
           <ScalarProperty Name="nimi" ColumnName="nimi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -142,6 +147,7 @@
         <MappingFragment StoreEntitySet="Entity3Set">
           <ScalarProperty Name="tooId" ColumnName="tooId" />
           <ScalarProperty Name="tooNimi" ColumnName="tooNimi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

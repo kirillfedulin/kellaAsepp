@@ -7,7 +7,7 @@
       <Diagram DiagramId="9d308342eaeb464881e78a6e08414381" Name="Diagram1" ZoomLevel="114" >
         <EntityTypeShape EntityType="Model1.Entity1" Width="1.5" PointX="5.125" PointY="3.125" />
         <EntityTypeShape EntityType="Model1.Entity2" Width="1.5" PointX="7.5" PointY="2.625" />
-        <EntityTypeShape EntityType="Model1.Entity3" Width="1.5" PointX="7.5" PointY="4.5" />
+        <EntityTypeShape EntityType="Model1.Entity3" Width="1.5" PointX="7.5" PointY="4.75" />
         <AssociationConnector Association="Model1.Entity1Entity2" />
         <AssociationConnector Association="Model1.Entity1Entity3" />
       </Diagram>
