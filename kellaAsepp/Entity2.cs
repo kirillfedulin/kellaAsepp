@@ -15,6 +15,7 @@ namespace kellaAsepp
     public partial class Entity2
     {
         public int kasutajaId { get; set; }
+        public string nimi { get; set; }
     
         public virtual Entity1 Entity1 { get; set; }
     }

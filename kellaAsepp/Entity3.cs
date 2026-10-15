@@ -15,6 +15,7 @@ namespace kellaAsepp
     public partial class Entity3
     {
         public int tooId { get; set; }
+        public string tooNimi { get; set; }
     
         public virtual Entity1 Entity1 { get; set; }
     }

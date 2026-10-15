@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/15/2026 11:07:06
+-- Date Created: 10/15/2026 11:30:53
 -- Generated from EDMX file: C:\Users\opilane\source\repos\kellaAsepp\kellaAsepp\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,26 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_Entity1Entity2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Entity2Set] DROP CONSTRAINT [FK_Entity1Entity2];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Entity1Entity3]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Entity3Set] DROP CONSTRAINT [FK_Entity1Entity3];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Entity1Set]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Entity1Set];
+GO
+IF OBJECT_ID(N'[dbo].[Entity2Set]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Entity2Set];
+GO
+IF OBJECT_ID(N'[dbo].[Entity3Set]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Entity3Set];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -29,13 +44,15 @@ GO
 
 -- Creating table 'Entity1Set'
 CREATE TABLE [dbo].[Entity1Set] (
-    [Id] int IDENTITY(1,1) NOT NULL
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [name] nvarchar(max)  NOT NULL
 );
 GO
 
 -- Creating table 'Entity2Set'
 CREATE TABLE [dbo].[Entity2Set] (
     [kasutajaId] int IDENTITY(1,1) NOT NULL,
+    [nimi] nvarchar(max)  NOT NULL,
     [Entity1_Id] int  NOT NULL
 );
 GO
@@ -43,6 +60,7 @@ GO
 -- Creating table 'Entity3Set'
 CREATE TABLE [dbo].[Entity3Set] (
     [tooId] int IDENTITY(1,1) NOT NULL,
+    [tooNimi] nvarchar(max)  NOT NULL,
     [Entity1_Id] int  NOT NULL
 );
 GO

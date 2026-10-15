@@ -21,6 +21,7 @@ namespace kellaAsepp
         }
     
         public int Id { get; set; }
+        public string name { get; set; }
     
         public virtual ICollection<Entity2> Entity2 { get; set; }
         public virtual ICollection<Entity3> Entity3 { get; set; }
