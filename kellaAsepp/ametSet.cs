@@ -12,12 +12,16 @@ namespace kellaAsepp
     using System;
     using System.Collections.Generic;
     
-    public partial class Entity2
+    public partial class ametSet
     {
-        public int kasutajaId { get; set; }
-        public string nimi { get; set; }
-        public string Id { get; set; }
+        public ametSet()
+        {
+            this.ametiTootajaSet = new HashSet<ametiTootajaSet>();
+        }
     
-        public virtual Entity1 Entity1 { get; set; }
+        public int ametid { get; set; }
+        public string ametNimetus { get; set; }
+    
+        public virtual ICollection<ametiTootajaSet> ametiTootajaSet { get; set; }
     }
 }

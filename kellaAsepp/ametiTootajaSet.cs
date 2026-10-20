@@ -12,12 +12,11 @@ namespace kellaAsepp
     using System;
     using System.Collections.Generic;
     
-    public partial class Entity3
+    public partial class ametiTootajaSet
     {
-        public int tooId { get; set; }
-        public string tooNimi { get; set; }
-        public string Id { get; set; }
+        public int ametitootajaid { get; set; }
     
-        public virtual Entity1 Entity1 { get; set; }
+        public virtual tootajaSet tootajaSet { get; set; }
+        public virtual ametSet ametSet { get; set; }
     }
 }

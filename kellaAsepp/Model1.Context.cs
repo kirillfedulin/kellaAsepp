@@ -25,8 +25,8 @@ namespace kellaAsepp
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Entity1> Entity1Set { get; set; }
-        public DbSet<Entity2> Entity2Set { get; set; }
-        public DbSet<Entity3> Entity3Set { get; set; }
+        public DbSet<ametiTootajaSet> ametiTootajaSetSet { get; set; }
+        public DbSet<ametSet> ametSetSet { get; set; }
+        public DbSet<tootajaSet> tootajaSetSet { get; set; }
     }
 }
