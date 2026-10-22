@@ -85,7 +85,7 @@
 
         <asp:Label ID="lblTulemus" runat="server" ForeColor="Green" EnableViewState="false" />
 
-        <h3>Ametitöötaja Andmed</h3>
+        <h3>Ametitöötaja andmed</h3>
 
         <asp:GridView ID="GridView1" runat="server"
             AutoGenerateColumns="False"

@@ -8,6 +8,8 @@
 
     <asp:Label ID="lblDiag" runat="server" ForeColor="Red" EnableViewState="false" />
 
+    <h1><strong><span style="font-size: xx-large">Sissestamine nimi</span></strong></h1>
+
     <asp:GridView ID="GridView1"
         runat="server"
         AutoGenerateColumns="False"
@@ -56,7 +58,7 @@
 
     <br />
     <br />
-    Lisa töötaja<br />
+    <strong>Lisa töötaja</strong><br />
 <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="SqlDataSource1" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="tootajaID" DefaultMode="Insert">
     <Fields>
         <asp:BoundField DataField="nimi" HeaderText="Nimi" SortExpression="nimi" />
