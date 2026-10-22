@@ -9,7 +9,7 @@
     <asp:GridView ID="GridView1"
         runat="server"
         AutoGenerateColumns="False"
-        DataKeyNames="Id"
+        DataKeyNames="tootajaid"
         DataSourceID="SqlDataSource1"
         EmptyDataText="There are no data records to display.">
 
@@ -17,14 +17,14 @@
             <asp:CommandField ShowDeleteButton="True"
                 ShowEditButton="True" />
 
-            <asp:BoundField DataField="Id"
+            <asp:BoundField DataField="tootajaid"
                 HeaderText="Id"
                 ReadOnly="True"
-                SortExpression="Id" />
+                SortExpression="tootajaid" />
 
-            <asp:BoundField DataField="name"
-                HeaderText="name"
-                SortExpression="name" />
+            <asp:BoundField DataField="nimiPerenimi"
+                HeaderText="Nimi Perenimi"
+                SortExpression="nimiPerenimi" />
         </Columns>
     </asp:GridView>
 
@@ -32,21 +32,21 @@
         runat="server"
         ConnectionString="<%$ ConnectionStrings:Model1ConnectionString %>"
         ProviderName="<%$ ConnectionStrings:Model1ConnectionString.ProviderName %>"
-        DeleteCommand="DELETE FROM [Entity1Set] WHERE [Id] = @Id"
-        SelectCommand="SELECT [Id], [name] FROM [Entity1Set]"
-        UpdateCommand="UPDATE [Entity1Set] SET [name] = @name WHERE [Id] = @Id" InsertCommand="INSERT INTO [Entity1Set] ([name]) VALUES (@name)">
+        DeleteCommand="DELETE FROM [tootajaSetSet] WHERE [tootajaid] = @tootajaid"
+        SelectCommand="SELECT [tootajaid], [nimiPerenimi] FROM [tootajaSetSet]"
+        UpdateCommand="UPDATE [tootajaSetSet] SET [nimiPerenimi] = @nimiPerenimi WHERE [tootajaid] = @tootajaid" InsertCommand="INSERT INTO [tootajaSetSet] ([nimiPerenimi]) VALUES (@nimiPerenimi)">
 
         <DeleteParameters>
-            <asp:Parameter Name="Id" Type="Int32" />
+            <asp:Parameter Name="tootajaid" Type="Int32" />
         </DeleteParameters>
 
         <InsertParameters>
-            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="nimiPerenimi" Type="String" />
         </InsertParameters>
 
         <UpdateParameters>
-            <asp:Parameter Name="name" Type="String" />
-            <asp:Parameter Name="Id" Type="Int32" />
+            <asp:Parameter Name="nimiPerenimi" Type="String" />
+            <asp:Parameter Name="tootajaid" Type="Int32" />
         </UpdateParameters>
 
     </asp:SqlDataSource>
@@ -54,8 +54,9 @@
     <br />
     <br />
     Lisa töötaja<br />
-<asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="SqlDataSource1" Height="50px" Width="125px">
+<asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="SqlDataSource1" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="tootajaid" DefaultMode="Insert">
     <Fields>
+        <asp:BoundField DataField="nimiPerenimi" HeaderText="Nimi Perenimi" SortExpression="nimiPerenimi" />
         <asp:CommandField ShowInsertButton="True" />
     </Fields>
 </asp:DetailsView>

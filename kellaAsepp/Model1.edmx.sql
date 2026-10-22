@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/20/2026 09:15:24
+-- Date Created: 10/22/2026 10:32:39
 -- Generated from EDMX file: C:\Users\opilane\source\repos\ABseotudMudel\kirillfedulin\kellaAsepp\kellaAsepp\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,25 +17,25 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_Entity1Entity2]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tabel2Set] DROP CONSTRAINT [FK_Entity1Entity2];
+IF OBJECT_ID(N'[dbo].[FK_tootajaSetametiTootajaSet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ametiTootajaSetSet] DROP CONSTRAINT [FK_tootajaSetametiTootajaSet];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Entity1Entity3]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tabel3Set] DROP CONSTRAINT [FK_Entity1Entity3];
+IF OBJECT_ID(N'[dbo].[FK_ametSetametiTootajaSet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ametiTootajaSetSet] DROP CONSTRAINT [FK_ametSetametiTootajaSet];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[tabel1Set]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tabel1Set];
+IF OBJECT_ID(N'[dbo].[ametiTootajaSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ametiTootajaSetSet];
 GO
-IF OBJECT_ID(N'[dbo].[tabel2Set]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tabel2Set];
+IF OBJECT_ID(N'[dbo].[ametSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ametSetSet];
 GO
-IF OBJECT_ID(N'[dbo].[tabel3Set]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tabel3Set];
+IF OBJECT_ID(N'[dbo].[tootajaSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tootajaSetSet];
 GO
 
 -- --------------------------------------------------
