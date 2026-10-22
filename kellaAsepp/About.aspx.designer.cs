@@ -10,7 +10,6 @@
 namespace kellaAsepp
 {
 
-
     public partial class About
     {
 
@@ -49,5 +48,6 @@ namespace kellaAsepp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+
     }
 }
