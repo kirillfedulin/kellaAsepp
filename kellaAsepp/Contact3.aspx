@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Lisa ametitöötaja veebivorm" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact3.aspx.cs" Inherits="kellaAsepp.Contact3" %>
+﻿<%@ Page Title="Lisa ametitöötaja" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact3.aspx.cs" Inherits="kellaAsepp.Contact3" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
@@ -9,6 +9,7 @@
             DataKeyNames="tootajaAmetiKohtID"
             DataSourceID="SqlDataSource1_ametitootaja"
             DefaultMode="Insert"
+            OnItemInserted="DetailsView1_ItemInserted"
             Height="50px" Width="400px">
             <Fields>
                 <asp:BoundField DataField="tootajaAmetiKohtID" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="tootajaAmetiKohtID" />
@@ -82,7 +83,35 @@
             </DeleteParameters>
         </asp:SqlDataSource>
 
-        <br />
-        <a runat="server" href="~/Contact2">Vaata ametitöötaja tabelit</a>
+        <asp:Label ID="lblTulemus" runat="server" ForeColor="Green" EnableViewState="false" />
+
+        <h3>Ametitöötaja Andmed</h3>
+
+        <asp:GridView ID="GridView1" runat="server"
+            AutoGenerateColumns="False"
+            DataKeyNames="tootajaAmetiKohtID"
+            DataSourceID="SqlDataSource1_tabel"
+            EmptyDataText="Andmeid ei ole.">
+            <Columns>
+                <asp:BoundField DataField="tootajaAmetiKohtID" HeaderText="Id" ReadOnly="True" />
+                <asp:BoundField DataField="nimi" HeaderText="Töötaja" />
+                <asp:BoundField DataField="nimetus" HeaderText="Ametikoht" />
+                <asp:BoundField DataField="alguskuupaev" HeaderText="Algus" DataFormatString="{0:dd.MM.yyyy}" HtmlEncode="False" />
+                <asp:BoundField DataField="loppkuupaev" HeaderText="Lõpp" DataFormatString="{0:dd.MM.yyyy}" HtmlEncode="False" />
+            </Columns>
+        </asp:GridView>
+
+        <asp:SqlDataSource ID="SqlDataSource1_tabel" runat="server"
+            ConnectionString="<%$ ConnectionStrings:Model1ConnectionString %>"
+            ProviderName="<%$ ConnectionStrings:Model1ConnectionString.ProviderName %>"
+            SelectCommand="SELECT tootajaAmetikohtSet.tootajaAmetiKohtID,
+                                  tootajaSet.nimi,
+                                  ametiKohtSet.nimetus,
+                                  tootajaAmetikohtSet.alguskuupaev,
+                                  tootajaAmetikohtSet.loppkuupaev
+                           FROM tootajaAmetikohtSet
+                           INNER JOIN tootajaSet ON tootajaAmetikohtSet.tootajaID = tootajaSet.tootajaID
+                           INNER JOIN ametiKohtSet ON tootajaAmetikohtSet.ametiKohtID = ametiKohtSet.ametiKohtID">
+        </asp:SqlDataSource>
     </main>
 </asp:Content>
