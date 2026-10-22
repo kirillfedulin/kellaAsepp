@@ -107,7 +107,9 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact2.aspx" />
+    <Content Include="Contact3.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Contact4.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -208,6 +210,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact4.aspx.cs">
+      <DependentUpon>Contact4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact4.aspx.designer.cs">
+      <DependentUpon>Contact4.aspx</DependentUpon>
+    </Compile>
     <Compile Include="klient.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -268,6 +277,13 @@
     </Compile>
     <Compile Include="Contact2.aspx.designer.cs">
       <DependentUpon>Contact2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact3.aspx.cs">
+      <DependentUpon>Contact3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact3.aspx.designer.cs">
+      <DependentUpon>Contact3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

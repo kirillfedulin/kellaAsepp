@@ -1,19 +1,37 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact2.aspx.cs" Inherits="kellaAsepp.Contact" %>
+﻿<%@ Page Title="Ametitöötaja tabel" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact2.aspx.cs" Inherits="kellaAsepp.Contact2" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
-        <h2 id="title"><%: Title %>.</h2>
-        <h3>Your contact page.</h3>
-        <address>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399<br />
-            <abbr title="Phone">P:</abbr>
-            425.555.0100
-        </address>
+        <h2 id="title"><%: Title %></h2>
 
-        <address>
-            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-        </address>
+        <asp:GridView ID="GridView1" runat="server"
+            AutoGenerateColumns="False"
+            DataKeyNames="tootajaAmetiKohtID"
+            DataSourceID="SqlDataSource1"
+            EmptyDataText="Andmeid ei ole.">
+            <Columns>
+                <asp:BoundField DataField="tootajaAmetiKohtID" HeaderText="Id" ReadOnly="True" SortExpression="tootajaAmetiKohtID" />
+                <asp:BoundField DataField="nimi" HeaderText="Töötaja" SortExpression="nimi" />
+                <asp:BoundField DataField="nimetus" HeaderText="Ametikoht" SortExpression="nimetus" />
+                <asp:BoundField DataField="alguskuupaev" HeaderText="Algus" SortExpression="alguskuupaev" DataFormatString="{0:dd.MM.yyyy}" HtmlEncode="False" />
+                <asp:BoundField DataField="loppkuupaev" HeaderText="Lõpp" SortExpression="loppkuupaev" DataFormatString="{0:dd.MM.yyyy}" HtmlEncode="False" />
+            </Columns>
+        </asp:GridView>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+            ConnectionString="<%$ ConnectionStrings:Model1ConnectionString %>"
+        ProviderName="<%$ ConnectionStrings:Model1ConnectionString.ProviderName %>"
+            SelectCommand="SELECT tootajaAmetikohtSet.tootajaAmetiKohtID,
+                                  tootajaSet.nimi,
+                                  ametiKohtSet.nimetus,
+                                  tootajaAmetikohtSet.alguskuupaev,
+                                  tootajaAmetikohtSet.loppkuupaev
+                           FROM tootajaAmetikohtSet
+                           INNER JOIN tootajaSet ON tootajaAmetikohtSet.tootajaID = tootajaSet.tootajaID
+                           INNER JOIN ametiKohtSet ON tootajaAmetikohtSet.ametiKohtID = ametiKohtSet.ametiKohtID">
+        </asp:SqlDataSource>
+
+        <br />
+        <a runat="server" href="~/Contact3">Lisa ametitöötaja</a>
     </main>
 </asp:Content>
