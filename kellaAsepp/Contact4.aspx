@@ -36,7 +36,7 @@
         </asp:SqlDataSource>
 
         <br />
-        Lisa ametikoht<br />
+        <strong>Lisa ametikoht</strong><br />
         <asp:DetailsView ID="DetailsView1" runat="server"
             AutoGenerateRows="False"
             DataKeyNames="ametiKohtID"

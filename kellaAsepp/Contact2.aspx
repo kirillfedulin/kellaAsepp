@@ -5,6 +5,7 @@
         <h2 id="title"><%: Title %></h2>
 
         <asp:GridView ID="GridView1" runat="server"
+            CssClass="table table-striped table-hover align-middle w-auto" GridLines="None" HeaderStyle-CssClass="table-dark"
             AutoGenerateColumns="False"
             DataKeyNames="tootajaAmetiKohtID"
             DataSourceID="SqlDataSource1"
@@ -31,7 +32,6 @@
                            INNER JOIN ametiKohtSet ON tootajaAmetikohtSet.ametiKohtID = ametiKohtSet.ametiKohtID">
         </asp:SqlDataSource>
 
-        <br />
-        <a runat="server" href="~/Contact3">Lisa ametitöötaja</a>
+        <a runat="server" href="~/Contact3" class="btn btn-primary">Lisa ametitöötaja</a>
     </main>
 </asp:Content>

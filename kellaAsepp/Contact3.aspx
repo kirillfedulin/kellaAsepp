@@ -5,18 +5,18 @@
         <h2 id="title"><%: Title %></h2>
 
         <asp:DetailsView ID="DetailsView1" runat="server"
+            CssClass="table table-borderless w-auto" FieldHeaderStyle-CssClass="fw-semibold pe-4"
             AutoGenerateRows="False"
             DataKeyNames="tootajaAmetiKohtID"
             DataSourceID="SqlDataSource1_ametitootaja"
             DefaultMode="Insert"
-            OnItemInserted="DetailsView1_ItemInserted"
-            Height="50px" Width="400px">
+            OnItemInserted="DetailsView1_ItemInserted">
             <Fields>
                 <asp:BoundField DataField="tootajaAmetiKohtID" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="tootajaAmetiKohtID" />
 
                 <asp:TemplateField HeaderText="Töötaja" SortExpression="tootajaID">
                     <InsertItemTemplate>
-                        <asp:DropDownList ID="DropDownList_tootaja" runat="server"
+                        <asp:DropDownList ID="DropDownList_tootaja" runat="server" CssClass="form-select"
                             DataSourceID="SqlDataSource1_tootaja"
                             DataTextField="nimi" DataValueField="tootajaID"
                             SelectedValue='<%# Bind("tootajaID") %>' />
@@ -29,7 +29,7 @@
 
                 <asp:TemplateField HeaderText="Ametikoht" SortExpression="ametiKohtID">
                     <InsertItemTemplate>
-                        <asp:DropDownList ID="DropDownList_ametikoht" runat="server"
+                        <asp:DropDownList ID="DropDownList_ametikoht" runat="server" CssClass="form-select"
                             DataSourceID="SqlDataSource1_ametikoht"
                             DataTextField="nimetus" DataValueField="ametiKohtID"
                             SelectedValue='<%# Bind("ametiKohtID") %>' />
@@ -42,7 +42,7 @@
 
                 <asp:TemplateField HeaderText="Algus" SortExpression="alguskuupaev">
                     <InsertItemTemplate>
-                        <asp:TextBox ID="TextBox_algus" runat="server" TextMode="Date" Text='<%# Bind("alguskuupaev") %>' />
+                        <asp:TextBox ID="TextBox_algus" runat="server" CssClass="form-control" TextMode="Date" Text='<%# Bind("alguskuupaev") %>' />
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBox_algus"
                             ErrorMessage="Sisesta alguskuupäev" ForeColor="Red" Display="Dynamic" />
                     </InsertItemTemplate>
@@ -50,11 +50,11 @@
 
                 <asp:TemplateField HeaderText="Lõpp" SortExpression="loppkuupaev">
                     <InsertItemTemplate>
-                        <asp:TextBox ID="TextBox_lopp" runat="server" TextMode="Date" Text='<%# Bind("loppkuupaev") %>' />
+                        <asp:TextBox ID="TextBox_lopp" runat="server" CssClass="form-control" TextMode="Date" Text='<%# Bind("loppkuupaev") %>' />
                     </InsertItemTemplate>
                 </asp:TemplateField>
 
-                <asp:CommandField ShowInsertButton="True" ShowCancelButton="False" InsertText="Lisa" />
+                <asp:CommandField ShowInsertButton="True" ShowCancelButton="False" InsertText="Lisa" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" />
             </Fields>
         </asp:DetailsView>
 
@@ -83,11 +83,12 @@
             </DeleteParameters>
         </asp:SqlDataSource>
 
-        <asp:Label ID="lblTulemus" runat="server" ForeColor="Green" EnableViewState="false" />
+        <asp:Label ID="lblTulemus" runat="server" ForeColor="Green" CssClass="d-block fw-semibold mb-2" EnableViewState="false" />
 
-        <h3>Ametitöötaja andmed</h3>
+        <h3 class="mt-4">Ametitöötaja tabel</h3>
 
         <asp:GridView ID="GridView1" runat="server"
+            CssClass="table table-striped table-hover align-middle w-auto" GridLines="None" HeaderStyle-CssClass="table-dark"
             AutoGenerateColumns="False"
             DataKeyNames="tootajaAmetiKohtID"
             DataSourceID="SqlDataSource1_tabel"
