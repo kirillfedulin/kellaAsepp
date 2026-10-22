@@ -25,8 +25,20 @@ namespace kellaAsepp
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<ametiTootajaSet> ametiTootajaSetSet { get; set; }
-        public DbSet<ametSet> ametSetSet { get; set; }
-        public DbSet<tootajaSet> tootajaSetSet { get; set; }
+        public DbSet<klient> klientSet { get; set; }
+        public DbSet<kell> kellSet { get; set; }
+        public DbSet<tooKategooria> tooKategooriaSet { get; set; }
+        public DbSet<too> tooSet { get; set; }
+        public DbSet<remont> remontSet { get; set; }
+        public DbSet<arve> arveSet { get; set; }
+        public DbSet<tootaja> tootajaSet { get; set; }
+        public DbSet<ametiKoht> ametiKohtSet { get; set; }
+        public DbSet<varuosa> varuosaSet { get; set; }
+        public DbSet<tarnija> tarnijaSet { get; set; }
+        public DbSet<remontTootaja> remontTootajaSet { get; set; }
+        public DbSet<remontToo> remontTooSet { get; set; }
+        public DbSet<remontVaruosa> remontVaruosaSet { get; set; }
+        public DbSet<tootajaAmetikoht> tootajaAmetikohtSet { get; set; }
+        public DbSet<tarnijaVaruosa> tarnijaVaruosaSet { get; set; }
     }
 }

@@ -4,12 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9d308342eaeb464881e78a6e08414381" Name="Diagram1" ZoomLevel="114" >
-        <EntityTypeShape EntityType="Model1.ametiTootajaSet" Width="1.5" PointX="5.125" PointY="3.125" />
-        <EntityTypeShape EntityType="Model1.ametSet" Width="1.5" PointX="7.5" PointY="2.625" />
-        <EntityTypeShape EntityType="Model1.tootajaSet" Width="1.5" PointX="7.5" PointY="4.75" />
-        <AssociationConnector Association="Model1.tootajaSetametiTootajaSet" />
-        <AssociationConnector Association="Model1.ametSetametiTootajaSet" />
+      <Diagram DiagramId="9d308342eaeb464881e78a6e08414381" Name="Diagram1" ZoomLevel="80" >
+        <EntityTypeShape EntityType="Model1.klient" Width="1.5" PointX="2" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.kell" Width="1.5" PointX="2" PointY="3" />
+        <EntityTypeShape EntityType="Model1.tooKategooria" Width="1.5" PointX="4.5" PointY="1" />
+        <EntityTypeShape EntityType="Model1.too" Width="1.5" PointX="4.5" PointY="4" />
+        <EntityTypeShape EntityType="Model1.remont" Width="1.5" PointX="2" PointY="6.5" />
+        <EntityTypeShape EntityType="Model1.arve" Width="1.5" PointX="0" PointY="9" />
+        <EntityTypeShape EntityType="Model1.tootaja" Width="1.5" PointX="7" PointY="4.5" />
+        <EntityTypeShape EntityType="Model1.ametiKoht" Width="1.5" PointX="9.5" PointY="4" />
+        <EntityTypeShape EntityType="Model1.varuosa" Width="1.5" PointX="12" PointY="3.5" />
+        <EntityTypeShape EntityType="Model1.tarnija" Width="1.5" PointX="14.5" PointY="4.5" />
+        <EntityTypeShape EntityType="Model1.remontTootaja" Width="1.5" PointX="4" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.remontToo" Width="1.5" PointX="6.5" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.remontVaruosa" Width="1.5" PointX="9" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.tootajaAmetikoht" Width="1.5" PointX="11.5" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.tarnijaVaruosa" Width="1.5" PointX="14.5" PointY="8.5" />
+        <AssociationConnector Association="Model1.klientkell" />
+        <AssociationConnector Association="Model1.tooKategooriatoo" />
+        <AssociationConnector Association="Model1.kellremont" />
+        <AssociationConnector Association="Model1.remontarve" />
+        <AssociationConnector Association="Model1.remontremontTootaja" />
+        <AssociationConnector Association="Model1.tootajaremontTootaja" />
+        <AssociationConnector Association="Model1.remontremontToo" />
+        <AssociationConnector Association="Model1.tooremontToo" />
+        <AssociationConnector Association="Model1.remontremontVaruosa" />
+        <AssociationConnector Association="Model1.varuosaremontVaruosa" />
+        <AssociationConnector Association="Model1.tootajatootajaAmetikoht" />
+        <AssociationConnector Association="Model1.ametiKohttootajaAmetikoht" />
+        <AssociationConnector Association="Model1.tarnijatarnijaVaruosa" />
+        <AssociationConnector Association="Model1.varuosatarnijaVaruosa" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
